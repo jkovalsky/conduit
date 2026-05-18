@@ -35,6 +35,46 @@ These backends pass the full [API spec test suite](specs/api/):
 
 Or you can [view upcoming implementations (WIPs)](https://github.com/realworld-apps/realworld/discussions/categories/wip-implementations).
 
+# Running Tests
+
+## E2E Tests
+
+The E2E test suite uses [Playwright](https://playwright.dev/) to validate frontend implementations against the demo server.
+
+### Prerequisites
+
+Install dependencies and Playwright browsers:
+
+```bash
+npm install
+npx playwright install
+```
+
+### Running Tests
+
+Run all E2E tests:
+
+```bash
+npx playwright test
+```
+
+Run specific test file:
+
+```bash
+npx playwright test auth.spec.ts
+```
+
+### Configuration
+
+By default, tests run against the demo server at `https://demo.realworld.show`. To test your own implementation set the `BASE_URL` environment variable:
+```bash
+BASE_URL=http://localhost:3000 npx playwright test
+```
+
+## API Tests
+
+See [specs/api/README.md](specs/api/README.md) for instructions on running API tests with Hurl or Bruno.
+
 # Learn more
 
 - [Documentation introduction](https://docs.realworld.show/introduction/)
